@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>basyo</title>
+  </head>
+  <body>
+    <h1 class="new-title">新規投稿ページ</h1>
+      <div class="form">
+        <%= form_with url: "/posts", method: :post, local: true do |form| %>
+          <div class="name-form-title">
+            お名前
+          </div>
+          <div class="name-form-main">
+            <%= form.text_field :name %>
+          </div>
+          <div class="content-form-title">
+            俳句
+          </div>
+          <div class="content-form-main">
+            <%= form.text_field :content %>
+          </div>
+          <%= form.submit "投稿する"%>
+        <% end %>
+      </div>
+      <div class="link-new-to-index">
+      <%=link_to "一覧に戻る", "/posts", method: :get %>
+  </body>
+</html>

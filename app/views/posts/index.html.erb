@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>basyo</title>
+  </head>
+  <body>
+    <header class="index-header">
+      <h1>Basyo</h1>
+      <p>あなたの一句がみんなに届く</p>
+    </header>
+
+    <div class="index-main">
+      <%= link_to "投稿する", "/posts/new", method: :get %>
+      <h3>投稿一覧</h3>
+      <% @posts.each do |post| %>
+        <div class="content">
+          <%= post.created_at %>
+          <%= post.content %>
+          <%= post.name %>
+          <%= link_to "編集する", "/posts/#{post.id}/edit" %>
+          <%= link_to "削除する", "/posts/#{post.id}/destroy", method: :post %>          
+        </div>
+      <% end %>
+    </div>
+  </body>
+</html>

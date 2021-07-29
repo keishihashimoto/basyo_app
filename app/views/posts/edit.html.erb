@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>basyo</title>
+  </head>
+  <body>
+    <header class="edit-header">
+      <h1 class="edit-header-logo">
+        編集ページ
+      </h1>
+      <div class="link-edit-to-index">
+        <%= link_to "投稿一覧に戻る", "/posts" %>
+      </div>
+    </header>
+    <div class="edit-main form">
+      <%= form_with url:"/posts/update", method: :post, local: true do |form| %>
+        <div class="name-form-title">
+          お名前
+        </div>
+        <div class="name-form-main">
+          <!--ここにidから拾ったユーザー名を入れたい-->
+        </div>
+        <div class="content-form-title">
+          投稿内容
+        </div>
+        <div class="content-form-main">
+          <!--ここにidから拾った投稿内容を入れたい-->
+        </div>
+        <div class="creates-time">
+          投稿日時:<!--投稿日時を入れる-->
+        </div>
+        <div class="updated-time">
+          最終更新:
+        </div>
+        <%= form.submit "変更を保存する" %>
+      <% end %>
+    </div>
+  </body>
+</html>
